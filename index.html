@@ -24,6 +24,97 @@
     <link rel="stylesheet" href="assets/css/owl.css">
     
     <style>
+      /* Navbar styles */
+      .navbar {
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.95) !important;
+      }
+      
+      .navbar-brand img {
+        transition: transform 0.3s ease;
+      }
+      
+      .navbar-brand:hover img {
+        transform: scale(1.05);
+      }
+      
+      .navbar-nav .nav-link {
+        position: relative;
+        color: #333 !important;
+        transition: all 0.3s ease;
+        border-radius: 8px;
+        margin: 0 5px;
+      }
+      
+      .navbar-nav .nav-link:hover {
+        color: #007bff !important;
+        background-color: rgba(0, 123, 255, 0.1);
+        transform: translateY(-2px);
+      }
+      
+      .navbar-nav .nav-link.active {
+        color: #007bff !important;
+        background-color: rgba(0, 123, 255, 0.1);
+      }
+      
+      .navbar-nav .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: #007bff;
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+      }
+      
+      .navbar-nav .nav-link:hover::after,
+      .navbar-nav .nav-link.active::after {
+        width: 80%;
+      }
+      
+      .navbar-toggler {
+        border: none !important;
+        padding: 0.5rem;
+      }
+      
+      .navbar-toggler:focus {
+        box-shadow: none !important;
+      }
+      
+      /* Mobile responsive improvements */
+      @media (max-width: 991.98px) {
+        .navbar-nav {
+          padding: 1rem 0;
+        }
+        
+        .navbar-nav .nav-link {
+          padding: 0.75rem 1rem;
+          margin: 0.25rem 0;
+          text-align: center;
+        }
+        
+        .navbar-nav .nav-link::after {
+          display: none;
+        }
+        
+        .navbar-collapse {
+          background: rgba(255, 255, 255, 0.98);
+          border-radius: 15px;
+          margin-top: 1rem;
+          padding: 1rem;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+      }
+      
+      /* Body styling */
+      body {
+        padding-top: 80px;
+        scroll-behavior: smooth;
+      }
+      
       /* Dropdown styles */
       .dropdown {
         position: relative;
@@ -222,41 +313,37 @@
   </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="assets/images/sociara.png" alt="Sociara Logo" height="40" class="me-2">
+        
+      </a>
+      
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link fw-semibold px-3" aria-current="page" href="#home">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
+            <a class="nav-link fw-semibold px-3" href="#about">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            <a class="nav-link fw-semibold px-3" href="videos.html">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-semibold px-3" href="#contact">Contact Us</a>
           </li>
         </ul>
-       
       </div>
     </div>
   </nav>
 
-  <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+  <div class="main-banner wow fadeIn" id="home" data-wow-duration="1s" data-wow-delay="0.5s">
     <div class="container" style="margin-top: -75px;">
       <div class="row">
         <div class="col-lg-12">
